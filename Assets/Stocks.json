@@ -1,0 +1,374 @@
+[
+  {
+    "Ticker": "NVDA",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000003RE",
+    "CompanyName": "NVIDIA"
+  },
+  {
+    "Ticker": "AVGO",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0000KU35",
+    "CompanyName": "Broadcom"
+  },
+  {
+    "Ticker": "ANET",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P0001354B",
+    "CompanyName": "Arista Networks"
+  },
+  {
+    "Ticker": "LLY",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P000001WJ",
+    "CompanyName": "Eli Lilly"
+  },
+  {
+    "Ticker": "ARM",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0001RJKB",
+    "CompanyName": "Arm Holdings"
+  },
+  {
+    "Ticker": "PANW",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0000WI3J",
+    "CompanyName": "Palo Alto Networks"
+  },
+  {
+    "Ticker": "PLTR",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P0001KOSE",
+    "CompanyName": "Palantir Technologies"
+  },
+  {
+    "Ticker": "TMUS",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P00008DL1",
+    "CompanyName": "T-Mobile"
+  },
+  {
+    "Ticker": "ORCL",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P0000043L",
+    "CompanyName": "Oracle"
+  },
+  {
+    "Ticker": "UBS",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P000005KI",
+    "CompanyName": "UBS Group"
+  },
+  {
+    "Ticker": "APH",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P000000F7",
+    "CompanyName": "Amphenol"
+  },
+  {
+    "Ticker": "IBM",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P000002RH",
+    "CompanyName": "International Business Machines"
+  },
+  {
+    "Ticker": "META",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0000W3KZ",
+    "CompanyName": "Meta Platforms"
+  },
+  {
+    "Ticker": "TSM",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P000005AR",
+    "CompanyName": "Taiwan Semiconductor Manufacturing"
+  },
+  {
+    "Ticker": "KLAC",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0000033M",
+    "CompanyName": "KLA"
+  },
+  {
+    "Ticker": "HIG",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P000002LQ",
+    "CompanyName": "The Hartford Financial Services Group"
+  },
+  {
+    "Ticker": "BRK.A",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P0000063T",
+    "CompanyName": "Berkshire Hathaway"
+  },
+  {
+    "Ticker": "SNPS",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P00000591",
+    "CompanyName": "Synopsys"
+  },
+  {
+    "Ticker": "AAPL",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000000GY",
+    "CompanyName": "Apple"
+  },
+  {
+    "Ticker": "MA",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P00005U6B",
+    "CompanyName": "Mastercard"
+  },
+  {
+    "Ticker": "MU",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000003MC",
+    "CompanyName": "Micron Technology"
+  },
+  {
+    "Ticker": "ISRG",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P00000301",
+    "CompanyName": "Intuitive Surgical"
+  },
+  {
+    "Ticker": "NOW",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P0000WDY1",
+    "CompanyName": "ServiceNow"
+  },
+  {
+    "Ticker": "MPWR",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000003OZ",
+    "CompanyName": "Monolithic Power Systems"
+  },
+  {
+    "Ticker": "V",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P0000CPCP",
+    "CompanyName": "Visa"
+  },
+  {
+    "Ticker": "GS",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P000002H5",
+    "CompanyName": "Goldman Sachs"
+  },
+  {
+    "Ticker": "MELI",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P00009FL7",
+    "CompanyName": "MercadoLibre"
+  },
+  {
+    "Ticker": "LRCX",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P00000384",
+    "CompanyName": "Lam Research"
+  },
+  {
+    "Ticker": "NU",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P0001NZF0",
+    "CompanyName": "Nu Holdings"
+  },
+  {
+    "Ticker": "MSFT",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000003MH",
+    "CompanyName": "Microsoft"
+  },
+  {
+    "Ticker": "AMAT",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000000H9",
+    "CompanyName": "Applied Materials"
+  },
+  {
+    "Ticker": "MRVL",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000003H5",
+    "CompanyName": "Marvell Technology"
+  },
+  {
+    "Ticker": "ON",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0000040N",
+    "CompanyName": "ON Semiconductor"
+  },
+  {
+    "Ticker": "NFLX",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000003UP",
+    "CompanyName": "Netflix"
+  },
+  {
+    "Ticker": "ADI",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000000FH",
+    "CompanyName": "Analog Devices"
+  },
+  {
+    "Ticker": "MS",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P000003PC",
+    "CompanyName": "Morgan Stanley"
+  },
+  {
+    "Ticker": "AMZN",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000000B7",
+    "CompanyName": "Amazon"
+  },
+  {
+    "Ticker": "CRWD",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0001HOOZ",
+    "CompanyName": "CrowdStrike"
+  },
+  {
+    "Ticker": "TXN",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000005EI",
+    "CompanyName": "Texas Instruments"
+  },
+  {
+    "Ticker": "AMD",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0000006A",
+    "CompanyName": "Advanced Micro Devices"
+  },
+  {
+    "Ticker": "QCOM",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000004J4",
+    "CompanyName": "QUALCOMM"
+  },
+  {
+    "Ticker": "INTU",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P00000300",
+    "CompanyName": "Intuit"
+  },
+  {
+    "Ticker": "NXPI",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0000PO4S",
+    "CompanyName": "NXP Semiconductors"
+  },
+  {
+    "Ticker": "CSCO",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0000019Y",
+    "CompanyName": "Cisco"
+  },
+  {
+    "Ticker": "CRM",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P000004T1",
+    "CompanyName": "Salesforce"
+  },
+  {
+    "Ticker": "ACN",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P0000004C",
+    "CompanyName": "Accenture"
+  },
+  {
+    "Ticker": "MCHP",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000003M7",
+    "CompanyName": "Microchip Technology"
+  },
+  {
+    "Ticker": "ASML",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0000002X",
+    "CompanyName": "ASML"
+  },
+  {
+    "Ticker": "ADBE",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0000005M",
+    "CompanyName": "Adobe"
+  },
+  {
+    "Ticker": "TER",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000005DY",
+    "CompanyName": "Teradyne"
+  },
+  {
+    "Ticker": "ENTG",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000001Z2",
+    "CompanyName": "Entegris"
+  },
+  {
+    "Ticker": "TSLA",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P0000OQN8",
+    "CompanyName": "Tesla"
+  },
+  {
+    "Ticker": "DIS",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P000005UJ",
+    "CompanyName": "The Walt Disney"
+  },
+  {
+    "Ticker": "SWKS",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000004ZF",
+    "CompanyName": "Skyworks Solutions"
+  },
+  {
+    "Ticker": "INTC",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000002X8",
+    "CompanyName": "Intel Corporation"
+  },
+  {
+    "Ticker": "PATH",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P0001M51B",
+    "CompanyName": "UiPath"
+  },
+  {
+    "Ticker": "GOOGL",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000002HD",
+    "CompanyName": "Google"
+  },
+  {
+    "Ticker": "S",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P0001MRB1",
+    "CompanyName": "SentinelOne"
+  },
+  {
+    "Ticker": "CB",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P0000001C",
+    "CompanyName": "Chubb"
+  },
+  {
+    "Ticker": "AXP",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P000000CU",
+    "CompanyName": "American Express"
+  },
+  {
+    "Ticker": "SHOP",
+    "StockExchange": "NYSE",
+    "MorningstarID": "0P00015ZGZ",
+    "CompanyName": "Shopify"
+  },
+  {
+    "Ticker": "GE",
+    "StockExchange": "NASDAQ",
+    "MorningstarID": "0P000002DO",
+    "CompanyName": "GE Aerospace"
+  }
+]
