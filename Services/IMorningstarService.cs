@@ -4,6 +4,7 @@ namespace StocksDataCollectorAPI.Services
 {
   public interface IMorningstarService
   {
+    Task<string?> GetStockPerformanceIDAsync(string stockExchange, string stockTicker);
     Task<StockData?> GetStockDataAsync(string stockID);
     Task<ValuationData?> GetValuationDataAsync(string stockID);
     Task<TrailingTotalReturnsListData?> GetTrailingTotalReturnsDataAsync(string stockID);

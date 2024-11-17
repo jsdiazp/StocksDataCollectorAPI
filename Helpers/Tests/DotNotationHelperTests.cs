@@ -4,10 +4,13 @@ namespace StocksDataCollectorAPI.Helpers.Tests
 {
   public class DotNotationHelperTests
   {
+    /// <summary>
+    /// Verifies that invalid inputs return null.
+    /// </summary>
     [Theory]
     [InlineData(null, "property", null)] // Null source
-    [InlineData(default, "", null)] // Empty path
-    [InlineData(default, "invalidProperty", null)] // Invalid property
+    [InlineData(null, "", null)] // Empty path
+    [InlineData(null, "invalidProperty", null)] // Invalid property
     public void GetNestedProperty_InvalidInputs_ReturnsNull(object? source, string path, object? expected)
     {
       // Act
@@ -17,23 +20,35 @@ namespace StocksDataCollectorAPI.Helpers.Tests
       Assert.Equal(expected, result);
     }
 
+    /// <summary>
+    /// Provides valid test data for nested properties, including collections and dictionaries.
+    /// </summary>
+    public static IEnumerable<object[]> ValidNestedPropertyTestData =>
+      [
+        [ new { Foo = new { Bar = 1 } }, "Foo.Bar", 1 ],
+        [ new { Foo = new { Bar = new[] { 1, 2, 3 } } }, "Foo.Bar[1]", 2 ],
+        [ new Dictionary<string, object?> { { "Foo", new { Bar = 1 } } }, "Foo.Bar", 1 ]
+      ];
 
-    [Fact]
-    public void GetNestedProperty_NestedPropertyExists_ReturnsValue()
+    /// <summary>
+    /// Verifies that existing nested properties are resolved correctly.
+    /// </summary>
+    [Theory]
+    [MemberData(nameof(ValidNestedPropertyTestData))]
+    public void GetNestedProperty_ValidNestedProperty_ReturnsValue(object source, string path, object expected)
     {
-      // Arrange
-      var source = new { Foo = new { Bar = "baz" } };
-      const string path = "Foo.Bar";
-
       // Act
       var result = DotNotationHelper.GetNestedProperty(source, path);
 
       // Assert
-      Assert.Equal("baz", result);
+      Assert.Equal(expected, result);
     }
 
+    /// <summary>
+    /// Verifies that a nonexistent nested property returns null.
+    /// </summary>
     [Fact]
-    public void GetNestedProperty_NestedPropertyDoesNotExist_ReturnsNull()
+    public void GetNestedProperty_NonexistentNestedProperty_ReturnsNull()
     {
       // Arrange
       var source = new { Foo = new { } };
@@ -46,11 +61,14 @@ namespace StocksDataCollectorAPI.Helpers.Tests
       Assert.Null(result);
     }
 
+    /// <summary>
+    /// Verifies that a property with a null value returns null.
+    /// </summary>
     [Fact]
-    public void GetNestedProperty_PropertyWithNullValue_ReturnsNull()
+    public void GetNestedProperty_NullValueProperty_ReturnsNull()
     {
       // Arrange
-      var source = new { Foo = default(object) };
+      var source = new { Foo = (object?)null };
       const string path = "Foo";
 
       // Act

@@ -1,3 +1,4 @@
+using Microsoft.FeatureManagement.Mvc;
 using StocksDataCollectorAPI.Helpers;
 using StocksDataCollectorAPI.Models.Morningstar;
 
@@ -5,15 +6,33 @@ namespace StocksDataCollectorAPI.Services
 {
   public class MorningstarService : IMorningstarService
   {
+    private readonly ILogger<MorningstarService> _logger;
     private readonly HttpClient _httpClient;
     private const string BaseUrl = "https://api-global.morningstar.com/sal-service/v1/stock";
 
-    public MorningstarService(HttpClient httpClient)
+    public MorningstarService(ILogger<MorningstarService> logger, HttpClient httpClient)
     {
+      _logger = logger;
       _httpClient = httpClient;
-      _httpClient.DefaultRequestHeaders.Add("ApiKey", Environment.GetEnvironmentVariable("API_KEY"));
+      _httpClient.DefaultRequestHeaders.Add("ApiKey", Environment.GetEnvironmentVariable("MORNINGSTAR_API_KEY"));
+      _httpClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.142.86 Safari/537.36");
     }
 
+    public async Task<string?> GetStockPerformanceIDAsync(string stockExchange, string stockTicker)
+    {
+      var baseUrl = "https://www.morningstar.com/api/v2";
+      var endpoint = $"stores/realtime/quotes?securities={stockExchange}:{stockTicker}";
+
+      var result = await GetDataAsync<Dictionary<string, RealTimeQuoteData>>(endpoint, baseUrl);
+
+      if (result == null)
+      {
+        _logger.LogInformation("Unable to get stock performance ID for {stockExchange}:{stockTicker}", stockExchange, stockTicker);
+        return null;
+      }
+
+      return DotNotationHelper.GetNestedProperty(result, $"{stockExchange}:{stockTicker}.performanceId.value");
+    }
 
     public async Task<StockData?> GetStockDataAsync(string stockID)
     {
@@ -69,11 +88,11 @@ namespace StocksDataCollectorAPI.Services
       return await GetDataAsync<TrailingTotalReturnsListData>($"trailingTotalReturns/{stockID}/data");
     }
 
-    private async Task<T?> GetDataAsync<T>(string endpoint)
+    private async Task<T?> GetDataAsync<T>(string endpoint, string baseUrl = BaseUrl)
     {
       try
       {
-        var response = await _httpClient.GetAsync($"{BaseUrl}/{endpoint}?languageId=en&locale=en&clientId=MDC&component=sal-valuation&version=4.30.0");
+        var response = await _httpClient.GetAsync($"{baseUrl}/{endpoint}");
 
         response.EnsureSuccessStatusCode();
 
@@ -81,12 +100,12 @@ namespace StocksDataCollectorAPI.Services
       }
       catch (HttpRequestException httpEx)
       {
-        Console.WriteLine($"Request error: {httpEx.Message}");
+        _logger.LogError(httpEx, "HTTP request error.");
         return default;
       }
       catch (Exception ex)
       {
-        Console.WriteLine($"Unexpected error: {ex.Message}");
+        _logger.LogError(ex, "Unexpected error.");
         return default;
       }
     }
