@@ -1,4 +1,4 @@
-namespace StocksDataCollectorAPI.Extensions
+namespace StocksDataCollectorAPI.Extensions.ApplicationExtensions
 {
   public static class EndpointExtensions
   {

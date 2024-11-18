@@ -4,6 +4,7 @@ using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using StocksDataCollectorAPI.Infrastructure.Telemetry;
 using StocksDataCollectorAPI.Services;
+using Serilog;
 
 namespace StocksDataCollectorAPI.Extensions
 {
@@ -17,6 +18,9 @@ namespace StocksDataCollectorAPI.Extensions
     /// </summary>
     public static void ConfigureServices(this IServiceCollection services, IConfiguration configuration)
     {
+      // Add Serilog as the primary logger
+      services.AddSerilog((services) => services.ReadFrom.Configuration(configuration));
+
       // API Documentation
       services.AddEndpointsApiExplorer();
       services.AddSwaggerGen();

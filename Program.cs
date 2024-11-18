@@ -1,22 +1,43 @@
-﻿using StocksDataCollectorAPI.Extensions;
-using OpenTelemetry.Trace;
+﻿using OpenTelemetry.Trace;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Logs;
+using Serilog;
+using StocksDataCollectorAPI.Extensions;
+using StocksDataCollectorAPI.Extensions.ApplicationExtensions;
 
-DotNetEnv.Env.Load(); // Load environment variables from .env file
+// Load environment variables
+DotNetEnv.Env.Load();
 
-var builder = WebApplication.CreateBuilder(args);
+// Initialize Serilog
+Log.Logger = new LoggerConfiguration()
+  .WriteTo.Console()
+  .CreateBootstrapLogger();
 
-// Configure Host and Services
-builder.Host.ConfigureLogging();
-builder.Services.ConfigureServices(builder.Configuration);
+try
+{
+  var builder = WebApplication.CreateBuilder(args);
 
-// Build the Application
-var app = builder.Build();
+  // Configure logging 
+  builder.Logging.ConfigureApplicationLogging(builder.Configuration);
 
-// Configure Middleware and Endpoints
-app.ConfigureMiddleware();
-app.ConfigureEndpoints();
+  // Configure Services
+  builder.Services.ConfigureServices(builder.Configuration);
 
-// Run the Application
-app.Run();
+  // Build the Application
+  var app = builder.Build();
+
+  // Configure Middleware and Endpoints
+  app.ConfigureMiddleware();
+  app.ConfigureEndpoints();
+
+  // Run the Application
+  app.Run();
+}
+catch (Exception ex)
+{
+  Log.Fatal(ex, "Application terminated unexpectedly");
+}
+finally
+{
+  Log.CloseAndFlush();
+}
