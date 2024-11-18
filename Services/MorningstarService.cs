@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.FeatureManagement.Mvc;
 using StocksDataCollectorAPI.Helpers;
 using StocksDataCollectorAPI.Models.Morningstar;
@@ -18,7 +19,7 @@ namespace StocksDataCollectorAPI.Services
       _httpClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.142.86 Safari/537.36");
     }
 
-    public async Task<string?> GetStockPerformanceIDAsync(string stockExchange, string stockTicker)
+    public async Task<string?> GetStockPerformanceIDAsync([RegularExpression("^(XNAS|XNYS)$", ErrorMessage = "Stock exchange must be either XNAS or XNYS.")] string stockExchange, string stockTicker)
     {
       var baseUrl = "https://www.morningstar.com/api/v2";
       var endpoint = $"stores/realtime/quotes?securities={stockExchange}:{stockTicker}";
