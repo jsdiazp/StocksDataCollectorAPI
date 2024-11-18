@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using Microsoft.FeatureManagement.Mvc;
 using StocksDataCollectorAPI.Helpers;
 using StocksDataCollectorAPI.Models.Morningstar;
 

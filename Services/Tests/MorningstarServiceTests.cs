@@ -150,14 +150,5 @@ namespace StocksDataCollectorAPI.Services.Tests
       };
     }
 
-    private static StockData CreateValidStockData()
-    {
-      return new StockData
-      {
-        operatingPerformanceData = new OperatingPerformanceData(),
-        valuationData = new ValuationData(),
-        trailingTotalReturnsListData = new TrailingTotalReturnsListData()
-      };
-    }
   }
 }
